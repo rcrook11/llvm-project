@@ -1038,7 +1038,8 @@ public:
     // canonical IV separately for each unrolled part.
     CanonicalIVIncrementForPart,
     BranchOnCount,
-    BranchOnCond
+    BranchOnCond,
+    CreateVectorPtr
   };
 
 private:
@@ -1146,6 +1147,7 @@ public:
     case VPInstruction::CanonicalIVIncrement:
     case VPInstruction::CanonicalIVIncrementForPart:
     case VPInstruction::BranchOnCount:
+    case VPInstruction::CreateVectorPtr:
       return true;
     };
     llvm_unreachable("switch should return");
